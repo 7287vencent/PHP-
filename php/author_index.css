@@ -1,0 +1,60 @@
+*{margin: 0;padding: 0;
+    /*background-color: #f6f1e7;*/
+}
+body{
+    background-image: url("images/y_IMG_5771.jpg");
+    background-size: 100%;
+    background-repeat:no_repeat;
+}
+ h3{
+    font-size: 30px;
+    text-align: center;
+    color: #fff;
+ }
+ ul{
+    overflow: hidden;
+ }
+ul li
+{ 
+    /*border: 2px solid blue;*/
+    float: left;
+    width: 200px;
+    padding: 10px;
+    list-style-position:inside;
+    list-style-type:none;
+}
+.content{
+     text-align: center;
+}
+.content li > a{
+    font-size: 20px;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+}
+.caozuo {
+    text-align: center;
+}
+.liuyan h2{
+    font-size: 25px;
+    text-align: center;
+    color: #4592ec;
+}
+.liuyan p{
+    font-size: 20px;
+    padding: 2px;
+    text-align: center;
+}
+a
+{
+    font-size: 20px;
+    text-decoration: none;
+    text-align: center;
+    color: #4592ec;
+    font-weight: bold;
+}
+
+p{
+    color: #b43720;
+}

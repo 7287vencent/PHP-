@@ -1,0 +1,187 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>用户注册</title>
+	<style>
+		*{
+			color: white;
+		}
+		h1{
+			text-align: center;
+			margin-left: -120px;
+		}
+		.list{
+			position: relative;
+			left: 550px;
+			font-weight: bolder;
+		}
+		body{
+			background-image: url(images/y_IMG_5781.jpg);
+			background-size: 100%;
+		}
+		.introduce{
+			position: relative;
+			left: 110px;
+			font-size: 20px;
+			font-weight: bolder;
+		}
+	</style>
+</head>
+<body>
+    <h1>用户注册</h1>
+	<div class="list">
+		<form action="zhuce.php" method="post" onsubmit="return check();" name="myform">
+        <p>
+            <label for="username">姓名：</label>
+            <input type="text" name="username" id="username" style="margin-left: 30px;color: black" />
+        </p>
+        <p>
+            <label for="pwd">密码：</label>
+            <input type="password" name="pwd" id="pwd" style= "margin-left: 30px;color: black"/>
+        </p>
+        <p>
+            <label for="repwd">确认密码：</label>
+            <input type="password" name="repwd" id="repwd" style="color: black"/>
+        </p>
+        <p>
+            <label>性别：</label>
+            <label style="color: black"><input type="radio" name="sex" value="男" style="margin-left: 30px;color: black"/>男</label>
+            <label style="color: black"><input type="radio" name="sex" value="女" color: black/>女</label>
+        </p>
+        <p>
+            <label for="idtype">身份：</label>
+            <select name="idtype" id="idtype" style="margin-left: 32px;font-size: 15px;font-weight: bold;color: black">
+                <option value="reader" style="color: black">读者</option>
+                <option value="author" style="color: black">作家</option>
+            </select>
+        </p>
+        <p>
+            <label for="phone">电话：</label>
+            <input type="phone" name="phone" id="phone" style="margin-left: 30px;color: black"/>
+        </p>
+		<p class="introduce">
+			<label for="intro" style="color: black;font-size: 25px">介绍</label>
+		</p>
+        <p>
+            <textarea name="intro" id="intro" cols="30" rows="10" style="margin-left: 22px;color: black"></textarea>
+        </p>
+        <p>
+            <input type="submit" value="注册" style="margin-left: 80px;font-size: 20px;font-weight: bold;color: black">
+            <input type="reset" value="重填" style="font-size: 20px;font-weight: bold;color: black">
+        </p>
+    </form>
+	</div>
+  <script>
+      function check() {
+            var username=myform.username.value;
+             var pwd=myform.pwd.value;
+             var repwd=myform.repwd.value;
+             var phone=myform.phone.value;     
+
+            if(username.length==0)
+             {
+                alert("用户名不能为空!");
+               myform.username.focus();
+               
+                return false;
+             }
+
+             if(username.length<3||username.length>12)
+             {
+                alert("用户名必须大于3个字符，小于12个字符");
+                myform.username.focus();myform.username.select();
+                return false;
+             }
+
+              if(!checkUsrname(username))
+              {
+                     alert("用户名不能有特殊字符");
+                    return false;
+             }
+
+          if(pwd.length==0)
+             {
+                alert("密码不能为空!");
+                myform.pwd.focus();
+                return false;
+             }
+
+        if(!checkPwd(pwd))
+              {
+                      alert("密码必须包括字母和数字");
+                      return false;
+             }  
+
+         if(repwd.length==0)
+             {
+                alert("确认密码不能为空!");
+               myform.repwd.focus();
+                return false;
+             }
+
+        if(!(pwd==repwd))
+            {
+                alert("密码和确认密码必须一致");
+                return false;
+             }
+
+             if(phone.length==0)
+             {
+                alert("电话号码不能为空!");
+                myform.phone.focus();
+                return false;
+             }
+             /*if(phone.length!=11)
+             {
+                alert("电话号码的格式不对！");
+                myform.phone.focus();myform.phone.select();
+                return false;
+             }
+           return true;*/
+   } 
+        //验证用户名中是否有非法字符
+    function checkUsrname(username)
+    {      
+             var str="_*#$&";
+            var ch;
+           for (var i =0 ; i <=username.length - 1; i++)
+            {
+                ch=username.charAt(i);
+                if(str.indexOf(ch) >  0)
+                {
+                    return false;
+                }
+            }
+                return true;
+    }
+        //验证输入的密码是否含有字母和数字
+     function checkPwd(pwd)
+     {
+             var ref=/^[0-9]+$/;
+             var reg=/^[A-Za-z]+$/;
+             var shuzi=false;
+             var zinv=false;
+             var ch;
+             for(var i=0;i<pwd.length;i++)
+             {
+                    ch=pwd.charAt(i);
+                    if(ref.test(ch))
+                    {
+                    shuzi=true;
+                    }
+                   if (reg.test(ch))
+                   {
+                    zinv=true;
+                   }
+                   if(shuzi&&zinv)
+                   {
+                       return true;
+                   }
+             }
+                return false;
+     }
+  </script>
+</body>
+</html>

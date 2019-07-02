@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    /*background-color: #f6f1e7;   */
+}
+body
+{
+    background-image: url("images/y_IMG_5735.jpg")  ;
+    background-size: 100%;
+    background-repeat:no_repeat;
+}
+.div3{
+position: absolute;
+text-align: center;
+top: 50%;
+left: 50%;
+margin-top: -200px;
+margin-left: -220px;
+/*background-image: url("images/Snipaste_2018-09-19_12-19-09.png");*/
+background-color: #93defe;
+}
+
+.form1{
+
+    font-size: 20px;
+    /*padding-left: -200px;*/
+    margin-left: -10px;
+    /*border: 1px solid #222;*/
+}
+
+p[type=p2] label
+{
+     margin-left: -112px;
+}
+p[type=p3] label
+{
+     margin-left: 50px;
+}
+p[type=p4] label
+{
+      margin-left: 95px;
+}

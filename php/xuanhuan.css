@@ -1,0 +1,37 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    
+}
+
+body{
+    background-image: url("images/y_IMG_5735.jpg")  ;
+    background-size: 100%;
+    background-repeat:no_repeat;
+}
+ul{
+    overflow: hidden;
+}
+ ul li{
+   float: left;
+    width: 200px;
+    padding: 10px;
+    list-style-position:inside;
+    list-style-type:none;
+}
+h1{
+    text-align: center;
+    color: #e7d0d0;
+}
+ul li a{
+    text-decoration: none;
+    text-align: center;
+    font-size: 22px;
+    color:#fff;
+}
+a{
+    text-decoration: none;
+    text-align: center;
+    font-size: 22px;
+    color:#fff;
+}
